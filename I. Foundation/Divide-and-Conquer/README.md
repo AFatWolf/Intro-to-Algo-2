@@ -8,12 +8,13 @@ Suppose we want to find a maximum subarray of the subarray A[low..high]. Divide-
 Therefore, we divide the subarray A[low..high] into 2 subarrays: A[low..mid], A[mid+1..high]. Let call the subarray with maximum sum is A[i..j].  
 There are 3 options for the subarray belong to:  
 + Entirely in the subarray A[low...mid]. low <= i <= j <= mid.    
-+ Entirely in the subarray A[mid+1..high]. mid+1<=i<=j<=high.  
++ Entirely in the subarray A[mid+1..high]. mid+1<=i<=j<=high.    
 + Crossing the mid point. i <=mid < j.  
+
 As we can see, the first two case, we can recall the result of A[low..mid] and A[mid+1..high].    
 To solve the final case, we could devise 2 other maximum value of a subarray:  
 + maxL[i..j]: the maximum subarray of array A[i..j] that start from i-th position.  // save the position.
-+ maxR[i..j]: the maximum subarray of array A[i..j] that end at j-th position.  // save the position.
++ maxR[i..j]: the maximum subarray of array A[i..j] that end at j-th position.  // save the position.  
 **Psuedocode:**
 ```
 FindMaximum-Subarray(A,low,high):  
